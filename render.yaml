@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: tikivillageecoresort
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+    staticPublishConfig:
+      routes:
+        - route: /.*
+          rewritePath: /index.html
