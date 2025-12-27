@@ -76,24 +76,24 @@ const Hero = () => {
   }, []);
 
   return (
-    <header className="relative min-h-screen pt-32 pb-20 flex flex-col items-center justify-center overflow-hidden">
+    <header className="relative w-full min-h-screen pt-32 pb-20 flex flex-col items-center justify-center overflow-hidden">
       <div id="snow-container" className="absolute inset-0 pointer-events-none z-20 overflow-hidden"></div>
       <div id="fire-flares" className="absolute inset-0 z-0 overflow-hidden pointer-events-none"></div>
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-tiki-dark to-tiki-dark pointer-events-none"></div>
 
-      <div className="relative z-40 text-center px-4 max-w-5xl mx-auto">
+      <div className="relative z-40 text-center px-4 sm:px-8 w-full max-w-6xl mx-auto">
         <div className="flex justify-center mb-6">
           <div className="p-4 bg-white/5 rounded-full backdrop-blur-sm border border-white/10 animate-pulse-slow">
             <Flame className="w-12 h-12 text-tiki-orange" />
           </div>
         </div>
-        <h2 className="text-tiki-gold text-sm md:text-xl tracking-[0.4em] uppercase mb-6 font-bold">Sarpanpally Lake, Vikarabad</h2>
-        <h1 className="font-tribal text-5xl md:text-7xl lg:text-9xl text-white mb-6 leading-tight drop-shadow-2xl">
+        <h2 className="text-tiki-gold text-xs sm:text-sm md:text-xl tracking-[0.2em] sm:tracking-[0.4em] uppercase mb-6 font-bold">Sarpanpally Lake, Vikarabad</h2>
+        <h1 className="font-tribal text-3xl sm:text-4xl md:text-7xl lg:text-9xl text-white mb-6 leading-tight drop-shadow-2xl">
           Wild. Primal. <br />
           <span className="fire-text">Unforgettable.</span>
         </h1>
         
-        <div className="flex justify-center gap-4 md:gap-8 mb-12 text-white bg-black/20 backdrop-blur-sm py-6 rounded-3xl border border-white/5">
+        <div className="flex justify-center gap-4 md:gap-8 mb-12 text-white bg-black/20 backdrop-blur-sm py-6 px-4 rounded-3xl border border-white/5 max-w-2xl mx-auto">
           <div className="text-center">
             <div className="font-tribal text-3xl md:text-5xl text-tiki-gold">{timeLeft.days.toString().padStart(2, '0')}</div>
             <div className="text-xs uppercase tracking-widest text-gray-400">Days</div>
@@ -115,7 +115,7 @@ const Hero = () => {
         <p className="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
           Disconnect from the chaos and reconnect with nature. Experience the ultimate New Year's tribal gathering at <strong>Sarpanpally Lake</strong>.
         </p>
-        <div className="flex flex-col md:flex-row gap-5 justify-center relative z-50">
+        <div className="flex flex-col md:flex-row gap-5 justify-center relative z-50 px-4">
           <a href="#nye2026" className="px-10 py-5 bg-tiki-orange text-white rounded-full font-bold text-lg hover:bg-orange-600 transition-all shadow-[0_0_40px_rgba(230,74,25,0.4)] flex items-center justify-center gap-3 transform hover:scale-105 hover:-translate-y-1">
             <Ticket />
             Book NYE 2026
