@@ -1,17 +1,12 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BookingProvider } from './context/BookingContext';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Activities from './components/Activities';
-import Experience from './components/Experience';
-import NYEEvent from './components/NYEEvent';
-import RecentMoments from './components/RecentMoments';
-import CampingPackages from './components/CampingPackages';
-import MenuAndStay from './components/MenuAndStay';
-import Gallery from './components/Gallery';
-import Guidelines from './components/Guidelines';
-import Location from './components/Location';
+import Home from './components/Home';
+import Events from './components/Events';
 import Footer from './components/Footer';
+import BookingModal from './components/BookingModal';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   useEffect(() => {
@@ -57,24 +52,23 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-tiki-dark text-tiki-sand font-body overflow-x-hidden selection:bg-tiki-orange selection:text-white">
-      <div id="global-sparkles" className="fixed inset-0 pointer-events-none z-[1] overflow-hidden"></div>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Activities />
-        <Experience />
-        <NYEEvent />
-        <RecentMoments />
-        <CampingPackages />
-        <MenuAndStay />
-        <Gallery />
-        <Guidelines />
-        <Location />
-      </main>
-      <Footer />
-    </div>
+    <BookingProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="bg-tiki-dark text-tiki-sand font-body overflow-x-hidden selection:bg-tiki-orange selection:text-white">
+          <div id="global-sparkles" className="fixed inset-0 pointer-events-none z-[1] overflow-hidden"></div>
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/events" element={<Events />} />
+            </Routes>
+          </main>
+          <Footer />
+          <BookingModal />
+        </div>
+      </Router>
+    </BookingProvider>
   );
 }
 

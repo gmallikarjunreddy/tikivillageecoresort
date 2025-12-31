@@ -29,12 +29,13 @@ const Location = () => {
                   <input type="text" name="name" className="w-full bg-black/40 border border-gray-700 rounded-lg p-4 text-white focus:border-tiki-orange focus:outline-none transition-colors" placeholder="Full Name" required />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-gray-400 text-sm font-medium">Pass Type</label>
+                  <label className="text-gray-400 text-sm font-medium">Interested In</label>
                   <select name="passType" className="w-full bg-black/40 border border-gray-700 rounded-lg p-4 text-white focus:border-tiki-orange focus:outline-none transition-colors">
-                    <option value="Early Bird">Early Bird (₹3000)</option>
-                    <option value="Regular">Regular (₹3500)</option>
-                    <option value="Group">Group Enquiry</option>
-                    <option value="General">General Enquiry</option>
+                    <option value="Camping">Camping Stay</option>
+                    <option value="Day Outing">Day Outing</option>
+                    <option value="Events">Events / Gathering</option>
+                    <option value="Group Booking">Group Booking</option>
+                    <option value="General Enquiry">General Enquiry</option>
                   </select>
                 </div>
               </div>

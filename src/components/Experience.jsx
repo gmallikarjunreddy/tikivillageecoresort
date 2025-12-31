@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Pause, Volume2 } from 'lucide-react';
 
-const VideoCard = ({ videoId, title, subtitle, delay, isPlaying, onPlay, countdownSeconds = 20 }) => {
+const VideoCard = ({ videoId, title, subtitle, delay, isPlaying, onPlay, countdownSeconds = 0 }) => {
   const [countdown, setCountdown] = useState(countdownSeconds);
   const [isReady, setIsReady] = useState(false);
   const [showControls, setShowControls] = useState(true);

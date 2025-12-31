@@ -11,10 +11,9 @@ const Footer = () => {
         </p>
 
         <div className="flex justify-center gap-8 mb-8 text-sm font-bold text-gray-500 uppercase tracking-widest">
-          <a href="#about" className="hover:text-tiki-orange transition-colors">Story</a>
-          <a href="#nye2026" className="hover:text-tiki-orange transition-colors">Tickets</a>
-          <a href="#guidelines" className="hover:text-tiki-orange transition-colors">Rules</a>
-          <a href="#location" className="hover:text-tiki-orange transition-colors">Contact</a>
+          <a href="/#about" className="hover:text-tiki-orange transition-colors">Story</a>
+          <a href="/#guidelines" className="hover:text-tiki-orange transition-colors">Rules</a>
+          <a href="/#location" className="hover:text-tiki-orange transition-colors">Contact</a>
         </div>
 
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-700 text-xs">

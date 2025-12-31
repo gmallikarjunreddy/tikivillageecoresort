@@ -1,36 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Flame, Ticket, Play } from 'lucide-react';
+import { useBooking } from '../context/BookingContext';
 
 const Hero = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
-
-  useEffect(() => {
-    const countDate = new Date('Dec 31, 2025 16:00:00').getTime();
-    
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const gap = countDate - now;
-
-      const second = 1000;
-      const minute = second * 60;
-      const hour = minute * 60;
-      const day = hour * 24;
-
-      setTimeLeft({
-        days: Math.floor(gap / day),
-        hours: Math.floor((gap % day) / hour),
-        minutes: Math.floor((gap % hour) / minute),
-        seconds: Math.floor((gap % minute) / second)
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+  const { openBooking } = useBooking();
 
   useEffect(() => {
     // Snowfall Generation
@@ -93,33 +66,14 @@ const Hero = () => {
           <span className="fire-text">Unforgettable.</span>
         </h1>
         
-        <div className="flex justify-center gap-4 md:gap-8 mb-12 text-white bg-black/20 backdrop-blur-sm py-6 px-4 rounded-3xl border border-white/5 max-w-2xl mx-auto">
-          <div className="text-center">
-            <div className="font-tribal text-3xl md:text-5xl text-tiki-gold">{timeLeft.days.toString().padStart(2, '0')}</div>
-            <div className="text-xs uppercase tracking-widest text-gray-400">Days</div>
-          </div>
-          <div className="text-center">
-            <div className="font-tribal text-3xl md:text-5xl text-tiki-gold">{timeLeft.hours.toString().padStart(2, '0')}</div>
-            <div className="text-xs uppercase tracking-widest text-gray-400">Hours</div>
-          </div>
-          <div className="text-center">
-            <div className="font-tribal text-3xl md:text-5xl text-tiki-gold">{timeLeft.minutes.toString().padStart(2, '0')}</div>
-            <div className="text-xs uppercase tracking-widest text-gray-400">Mins</div>
-          </div>
-          <div className="text-center">
-            <div className="font-tribal text-3xl md:text-5xl text-tiki-gold">{timeLeft.seconds.toString().padStart(2, '0')}</div>
-            <div className="text-xs uppercase tracking-widest text-gray-400">Secs</div>
-          </div>
-        </div>
-
         <p className="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
-          Disconnect from the chaos and reconnect with nature. Experience the ultimate New Year's tribal gathering at <strong>Sarpanpally Lake</strong>.
+          Disconnect from the chaos and reconnect with nature. Experience the ultimate tribal gathering at <strong>Sarpanpally Lake</strong>.
         </p>
         <div className="flex flex-col md:flex-row gap-5 justify-center relative z-50 px-4">
-          <a href="#nye2026" className="px-10 py-5 bg-tiki-orange text-white rounded-full font-bold text-lg hover:bg-orange-600 transition-all shadow-[0_0_40px_rgba(230,74,25,0.4)] flex items-center justify-center gap-3 transform hover:scale-105 hover:-translate-y-1">
+          <button onClick={openBooking} className="px-10 py-5 bg-tiki-orange text-white rounded-full font-bold text-lg hover:bg-orange-600 transition-all shadow-[0_0_40px_rgba(230,74,25,0.4)] flex items-center justify-center gap-3 transform hover:scale-105 hover:-translate-y-1">
             <Ticket />
-            Book NYE 2026
-          </a>
+            Book Camping
+          </button>
           <a href="#experience" className="px-10 py-5 bg-white/10 border border-white/30 backdrop-blur-md text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3 transform hover:scale-105 hover:-translate-y-1">
             <Play />
             Watch The Vibe
