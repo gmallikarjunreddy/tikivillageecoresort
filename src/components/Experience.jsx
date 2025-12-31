@@ -161,6 +161,7 @@ const Experience = () => {
             delay="" 
             isPlaying={playingId === "1149325940"}
             onPlay={handlePlay}
+            countdownSeconds={20}
           />
           <VideoCard 
             videoId="1149327315" 
@@ -169,6 +170,7 @@ const Experience = () => {
             delay="delay-100 transform md:-translate-y-8" 
             isPlaying={playingId === "1149327315"}
             onPlay={handlePlay}
+            countdownSeconds={20}
           />
           <VideoCard 
             videoId="1149327859" 
@@ -177,6 +179,7 @@ const Experience = () => {
             delay="delay-200" 
             isPlaying={playingId === "1149327859"}
             onPlay={handlePlay}
+            countdownSeconds={20}
           />
         </div>
       </div>
