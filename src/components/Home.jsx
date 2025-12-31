@@ -7,6 +7,7 @@ import RecentMoments from './RecentMoments';
 import CampingPackages from './CampingPackages';
 import MenuAndStay from './MenuAndStay';
 import Gallery from './Gallery';
+import Testimonials from './Testimonials';
 import Guidelines from './Guidelines';
 import Location from './Location';
 
@@ -21,6 +22,7 @@ const Home = () => {
       <CampingPackages />
       <MenuAndStay />
       <Gallery />
+      <Testimonials />
       <Guidelines />
       <Location />
     </>
